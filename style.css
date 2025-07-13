@@ -1,0 +1,280 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #d2c49a;
+}
+
+/* HEADER */
+header {
+header {
+  background-image: url('images/header-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+}
+
+/* NAVIGASI */
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+nav a,
+#cart-button {
+  background: white;
+  color: #ff4d4d;
+  padding: 0.5rem 1rem;
+  border: none;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s, color 0.3s;
+}
+
+nav a:hover,
+#cart-button:hover {
+  background-color: #ffe6e6;
+  color: #c10000;
+}
+
+/* SEARCH BAR */
+.search-bar {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.search-bar input {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 200px;
+}
+
+.search-bar button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* MAIN */
+main {
+  padding: 2rem;
+}
+
+/* PRODUK LIST */
+.produk-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  justify-items: center;
+  margin-top: 1.5rem;
+}
+
+/* ITEM PRODUK */
+.item {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 240px;
+  text-align: center;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s;
+}
+
+.filter-buttons {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.filter-buttons button {
+  padding: 8px 14px;
+  margin: 0 6px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.filter-buttons button:hover {
+  background-color: #c10000;
+}
+
+
+.item:hover {
+  transform: translateY(-5px);
+}
+
+.item img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  height: 150px;
+}
+
+.item button {
+  background-color: #ff4d4d;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.item button:hover {
+  background-color: #d10000;
+}
+
+/* KATEGORI */
+.kategori-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+ 
+
+/* Section fade-in */
+section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.checkout-container {
+  padding: 2rem;
+  max-width: 600px;
+  margin: auto;
+}
+
+.checkout-container ul {
+  padding-left: 20px;
+  margin-bottom: 1rem;
+}
+
+.checkout-container form input,
+.checkout-container form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.checkout-container button {
+  margin-top: 10px;
+  padding: 10px 16px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.checkout-container button:hover {
+  background-color: #c10000;
+}
+
+/* ANIMASI MASUK */
+.checkout-container section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-in-out;
+}
+
+.checkout-container section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* EFEK TOMBOL */
+.checkout-container button {
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.checkout-container button:hover {
+  background-color: #b80000;
+  transform: scale(1.05);
+}
+
+/* LOADER */
+#loader {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #ff4d4d;
+  color: white;
+  text-align: center;
+  border-radius: 6px;
+  font-weight: bold;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.hidden {
+  display: none;
+}
+
+
+/* FOOTER */
+footer {
+  background: #ff4d4d;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 3rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .produk-list {
+    grid-template-columns: 1fr;
+  }
+
+  .kategori-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+

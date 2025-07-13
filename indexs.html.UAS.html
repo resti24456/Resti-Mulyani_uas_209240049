@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jeletot Pisan</title>
+  <link rel="stylesheet" href="CSS/style.css" />
+  <script src="JS/screept.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="images/logo.png" alt="Jeletot Pisan" />
+      <h1>Jeletot Pisan</h1>
+    </div>
+    <nav class="nav-link">
+      <a href="#home">Home</a>
+      <a href="#produk">Menu</a>
+      <a href="#kategori">Kategori</a>
+      <a href="#tentang">Tentang Kami</a>
+      <a href="#kontak">Kontak</a>
+      <a href="checkout.html">🧾 Checkout</a>
+      <a href="#lokasi">Tata Letak</a>
+      <button id="cart-button">🛒 Keranjang (<span id="cart-count">0</span>)</button>
+    </nav>
+    <div class="search-bar">
+      <input type="text" placeholder="Cari makanan atau minuman..." id="search-input" />
+      <button onclick="searchProduct()">Cari</button>
+    </div>
+  </header>
+  <div id="loader" class="hidden">Memproses pesanan...</div>
+
+
+  <main>
+    <section id="home">
+      <h2>Selamat Datang di Jeletot Pisan!</h2>
+      <p>Toko makanan pedas dan minuman dingin terenak!</p>
+      <p>Lihat menu kami dan nikmati rasa pedas yang menggigit!</p>
+    </section>
+
+    <section id="tentang">
+      <h2>Tentang Kami</h2>
+      <p>Jeletot Pisan adalah toko makanan khas pedas seperti bakso aci, seblak, dan minuman dingin segar seperti es buah dan teh dingin.</p>
+    </section>
+
+ <section id="produk">
+  <h2>Produk Kami</h2>
+
+  <!-- Tombol filter -->
+  <div class="filter-buttons">
+    <button onclick="filterProduk('all')">Semua</button>
+    <button onclick="filterProduk('pedas')">Makanan Pedas</button>
+    <button onclick="filterProduk('minuman')">Minuman Dingin</button>
+  </div>
+
+  <div class="produk-grid">
+    <!-- Makanan Pedas -->
+    <div class="card pedas">
+      <img src= "C:\html\image.html\WhatsApp Image 2025-07-13 at 21.24.20 (2).jpeg"alt="Bakso Aci" />
+      <h4>Bakso Aci</h4>
+      <p>Rp20.000</p>
+      <p>Bakso Aci "Jeletot Pisan" adalah produk bakso yang terbuat dari tepung aci (tepung tapioka) dengan perpaduan bumbu khas dan tambahan cabai yang memberikan rasa pedas yang nikmat. Dengan tekstur kenyal dan lembut, bakso aci ini cocok disantap sebagai hidangan ringan atau pelengkap hidangan lainnya. Rasa pedas yang kuat membuatnya menjadi pilihan tepat bagi pecinta makanan pedas. Produk ini dibuat dengan bahan-bahan berkualitas dan proses pembuatan yang higienis untuk memastikan rasa dan kualitas terbaik. Nikmati sensasi pedas dan kenyalnya dalam setiap gigitan!</p>
+      <button onclick="addToCart('Bakso Aci')">Beli</button>
+    </div>
+    <div class="card pedas">
+      <img src="C:\html\image.html\seblak kering 2.jpg" alt="Seblak kering" />
+      <h4>Seblak Kering</h4>
+      <p>Rp15.000</p>
+      <p>Seblak Kering "Jeletot Pisan" adalah produk seblak yang dimasak dengan proses pengeringan untuk menghasilkan tekstur renyah dan rasa yang kuat. Dengan perpaduan bumbu khas dan tambahan cabai yang pedas, seblak kering ini menawarkan sensasi rasa yang unik dan nikmat. Cocok disantap sebagai camilan atau pelengkap hidangan lainnya. Dibuat dengan bahan-bahan berkualitas dan proses pembuatan yang higienis, seblak kering ini menjanjikan rasa yang konsisten dan lezat dalam setiap gigitan. Sempurna bagi pecinta makanan pedas dan renyah!</p>
+      <button onclick="addToCart('Seblak Kering')">Beli</button>
+    </div>
+     <div class="card pedas">
+      <img src= "C:\html\image.html\WhatsApp Image 2025-07-13 at 21.24.19 (3).jpeg"alt="seblak" />
+      <h4>Seblak</h4>
+      <p>Rp25.000</p>
+      <p>Seblak "Jeletot Pisan" adalah hidangan khas Indonesia yang terbuat dari kerupuk basah yang dimasak dengan bumbu khas dan tambahan cabai yang pedas. Dengan tekstur kenyal dan rasa yang kuat, seblak ini menawarkan sensasi pedas yang nikmat dan memanjakan lidah. Cocok disantap sebagai hidangan ringan atau pelengkap hidangan lainnya. Dibuat dengan bahan-bahan berkualitas dan proses pembuatan yang higienis, seblak ini menjanjikan rasa yang lezat dan autentik dalam setiap gigitan. Sempurna bagi pecinta makanan pedas!</p>
+      <button onclick="addToCart('Seblak')">Beli</button>
+    </div>
+     <div class="card pedas">
+      <img src= "C:\html\image.html\WhatsApp Image 2025-07-13 at 21.24.19 (1).jpeg"alt="cireng kuah pedas" />
+      <h4>Cireng kuah pedas</h4>
+      <p>Rp20.000</p>
+      <p>Cireng Kuah Pedas "Jeletot Pisan" adalah produk cireng yang disajikan dengan kuah pedas yang gurih dan lezat. Cireng yang kenyal dan lembut berpadu dengan kuah pedas yang kuat, membuatnya menjadi pilihan tepat bagi pecinta makanan pedas. Dibuat dengan bahan-bahan berkualitas dan bumbu khas, cireng kuah pedas ini menawarkan rasa yang autentik dan memanjakan lidah. Cocok disantap sebagai hidangan ringan atau pelengkap hidangan lainnya. Nikmati sensasi pedas dan kenyalnya dalam setiap gigitan!</p>
+      <button onclick="addToCart('cireng kuah pedas')">Beli</button>
+    </div>
+
+    <!-- Minuman Dingin -->
+    <div class="card minuman">
+      <img src= "C:\html\image.html\WhatsApp Image 2025-07-13 at 21.24.20 (1).jpeg"alt="Es Buah" />
+      <h4>Es Buah</h4>
+      <p>Rp25.000</p>
+      <p>Es Buah
+Es buah Jeletot pisan adalah minuman dingin yang menyegarkan, terbuat dari campuran berbagai macam buah segar yang dipotong-potong, seperti melon, semangka, nanas, stroberi, anggur, dan apel. Buah-buahan ini kemudian disajikan dengan kuah manis yang biasanya terbuat dari sirup, santan, atau susu kental manis, serta tambahan es batu untuk sensasi dingin yang maksimal. Es buah cocok dinikmati saat cuaca panas atau sebagai hidangan penutup yang sehat dan manis.</p>
+      <button onclick="addToCart('Es Buah')">Beli</button>
+    </div>
+    <div class="card minuman">
+      <img src="C:\html\image.html\WhatsApp Image 2025-07-13 at 21.24.20.jpeg" alt="Teh tarik" />
+      <h4>Teh Tarik</h4>
+      <p>Rp13.000</p>
+      <p>Teh tarik Jeletot pisan adalah minuman teh tradisional yang populer di Asia Tenggara, terutama Malaysia dan Singapura. Ciri khas teh tarik adalah proses pembuatannya di mana teh dicampur dengan susu kental manis atau evaporasi, kemudian "ditarik" atau dituangkan berulang kali antara dua wadah dari ketinggian tertentu. Proses penarikan ini menciptakan busa lembut di permukaan teh dan mendinginkan minuman, sekaligus memastikan semua bahan tercampur sempurna dan menghasilkan tekstur yang kaya dan creamy.</p>
+      <button onclick="addToCart('Teh Dingin')">Beli</button>
+    </div>
+  </div>
+   <div class="card minuman">
+      <img src= "C:\html\image.html\WhatsApp Image 2025-07-13 at 21.24.21 (1).jpeg"alt="Macha latte" />
+      <h4>Macha latte</h4>
+      <p>Rp16.000</p>
+      <p>Matcha latte Jeletot pisan adalah minuman modern yang menggabungkan bubuk teh hijau matcha dengan susu, yang bisa berupa susu sapi atau susu nabati. Matcha sendiri adalah teh hijau bubuk yang kaya akan antioksidan dan memiliki rasa unik yang sedikit pahit, gurih (umami), dan segar. Ketika dicampur dengan susu, rasa pahwa matcha menjadi lebih lembut dan creamy, menghasilkan minuman yang menenangkan dan memberikan energi. Matcha latte bisa disajikan panas atau dingin, seringkali dengan tambahan pemanis seperti gula atau madu sesuai selera.</p>
+      <button onclick="addToCart('Es Buah')">Beli</button>
+    </div>
+    <div class="card minuman">
+      <img src="C:\html\image.html\WhatsApp Image 2025-07-13 at 21.24.21.jpeg" alt="milkshake stawberry" />
+      <h4>Milkshake</h4>
+      <p>Rp18.000</p>
+      <p>Milkshake Jeletot pisan minuman dingin dan kental yang dibuat dengan mencampurkan susu, es krim, dan perasa tambahan seperti buah-buahan, sirup cokelat, vanila, atau karamel. Semua bahan ini diblender hingga halus dan berbusa, menciptakan tekstur yang lembut dan creamy. Milkshake seringkali dihiasi dengan whipped cream, taburan cokelat, atau ceri di atasnya, menjadikannya hidangan penutup sekaligus minuman yang memanjakan. Milkshake sangat populer di kalangan anak-anak dan dewasa sebagai camilan manis yang menyegarkan.</p>
+      <button onclick="addToCart('Teh Dingin')">Beli</button>
+    </div>
+  </div>
+</section>
+
+   <section id="Kategori">
+  <h2>kategori</h2>
+ <section id="kategori">
+      <h2>Kategori</h2>
+      <ul>
+        <li>Makanan Pedas</li>
+        <li>Minuman Dingin</li>
+      </ul>
+    </section>
+
+     <main class="checkout-container">
+    <section>
+      <h2>Keranjang Belanja</h2>
+      <ul id="checkout-items"></ul>
+      <p><strong>Total:</strong> <span id="total-harga">Rp0</span></p>
+    </section>
+
+    <section>
+      <h2>Data Pemesanan</h2>
+      <form id="checkout-form" onsubmit="return submitOrder(event)">
+        <label>Nama Lengkap:</label><br/>
+        <input type="text" id="nama" required /><br/><br/>
+
+        <label>Email:</label><br/>
+        <input type="email" id="email" required /><br/><br/>
+
+        <label>Alamat Pengiriman:</label><br/>
+        <textarea id="alamat" required></textarea><br/><br/>
+
+        <button type="submit">Pesan Sekarang</button>
+      </form>
+    </section>
+  </main>
+
+    <section id="kontak">
+      <h2>Kontak Kami</h2>
+      <p>Email: jeletot@pedas.com | Telepon: 0821-1234-5678</p>
+    </section>
+
+    <section id="lokasi">
+      <h2>Lokasi Kami</h2>
+      <p>Jl.Cinta 02. Rt.09 Rw.10</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; Resti Mulyani Abi 2 2025 Jeletot Pisan</p>
+  </footer>
+</body>
+</html>
